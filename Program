@@ -1,0 +1,44 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace TestWorkRegistration
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine(" Для Входа введите 1 /n Для Регистрации введите 2 /n Для Выхода введите 3 /n");
+            List<User> users = new List<User>();
+            int choose = int.Parse(Console.ReadLine());
+            switch(choose)
+            {
+                case 1:
+                    while (true)
+                    {
+                        User user = new User();
+                        user.EnterUser(user);
+                        //if (user.IsUserCorrect(user))
+                        //{
+                        users.Add(user);
+                        user.SaveUser(users);
+                        //}
+                        //else
+                        //    break;
+                    }
+                    break;
+                case 2:
+                    break;
+                case 3:
+                    break;
+                default:
+                    Console.WriteLine("Ошибка, вы ввели неверный ответ");
+                    break;
+            }
+        }
+
+        
+    }
+}
